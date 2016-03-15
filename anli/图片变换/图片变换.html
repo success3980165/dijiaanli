@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+
+     #nav li{
+        width: 20px;
+        height: 20px;
+        float: left;
+        border: 2px solid #f00;
+        list-style: none;
+        text-align:center;
+        line-height: 20px;
+        cursor: pointer;
+     }
+
+	</style>
+</head>
+<body>
+
+
+	<img id="pic"src="images/1.jpg" alt="">
+	<ul id="nav">
+		<li class="list1">1</li>
+		<li class="list2">2</li>
+		<li class="list3">3</li>
+		<li class="list4">4</li>
+	</ul>
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+
+       $(".list1").click(function(){
+       	$("#pic").attr("src","images/1.jpg")
+       });
+       $(".list2").click(function(){
+       	$("#pic").attr("src","images/2.jpg")
+       });
+       $(".list3").click(function(){
+       	$("#pic").attr("src","images/3.jpg")
+       });
+       $(".list4").click(function(){
+       	$("#pic").attr("src","images/4.jpg")
+       });
+
+
+	</script>
+</body>
+</html>

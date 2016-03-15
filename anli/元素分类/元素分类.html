@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+       .box1{
+       	height: 200px;
+       	background-color: #ff0;
+       }
+       .box2{
+       	height: 250px;
+       	background-color: #f00;
+       }
+       .box1 a{
+       	display: block; /* 因为变成块元素了所以padding-top起到作用*/
+       	border: 1px solid #000;
+       	margin-left: 120px;
+       	padding-top: 50px;
+       	}
+       	.box2 .smallbox1{
+       		width: 100px;
+       		height: 100px;
+       		border: 1px solid #000;
+       		display: inline;
+
+       	}
+       	.box2 .smallbox2{
+       		width: 100px;
+       		height: 100px;
+       		border: 1px solid #000;
+       		display: inline;
+       	}
+       	.box3{
+       		background-color: #0ff; 
+       		display: none; /*有图片背景，因为display:none;所以没有了*/
+       	}
+       	.box4{
+            background-color: #0f0;
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            margin-top: 50px;
+       	}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<a href="">这是一个元素</a><a href="">这是又一个元素</a>
+	</div>
+	<div class="box2">
+		<div class="smallbox1">这是一个元素</div>
+		<div class="smallbox2">元素一个这还是</div>
+	</div>
+	<div class="box3">
+		<img src="tupian3.jpg" alt="">
+		<img src="tupian3.jpg" alt="">
+	</div>
+		<div class="box4"><a href="">这有很多元素</a><a href="">这有很多元素</a></div>
+</body>
+</html>
