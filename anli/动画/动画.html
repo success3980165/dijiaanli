@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+     .box{
+     	width: 300px;
+     	height: 300px;
+     	background-color: #f00;
+     }
+     .box1{
+     	width: 100px;
+     	height: 50px;
+     	background-color: #ff0;
+     	text-align: center;
+     	line-height: 50px;
+     }
+     .caidan{
+     	width: 50px;
+     	height: 100px;
+     	display: none;
+     	background-color: #f00;
+     }
+	</style>
+</head>
+<body>
+	<input type="button" value="隐藏" id="hide">
+	<input type="button" value="显示" id="show">
+	<input type="button" value="上卷" id="slideUp">
+	<input type="button" value="下拉" id="slideDown">
+	<input type="button" value="渐入" id="fadeIn">
+	<input type="button" value="渐出" id="fadeOut">
+	<input type="button" value="隐藏显示切换" id="toggle">
+	<input type="button" value="上卷下拉切换" id="slideToggle">
+	<input type="button" value="渐入渐出切换" id="fadeToggle">
+	
+
+	
+	
+    <div class="box">
+    	
+    </div>
+    <div class="box1">
+    	<p>下拉菜单</p>
+    </div>
+    	<ul class="caidan">
+    		<li>书籍</li>
+    		<li>电影</li>
+    	</ul>
+ 
+
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+	$("#hide").click(function(){
+		$(".box").hide(3000);
+	})
+    $("#show").click(function(){
+		$(".box").show(3000);
+	})
+	$("#slideUp").click(function(){
+		$(".box").slideUp(3000);
+	})
+	$("#slideDown").click(function(){
+		$(".box").slideDown(3000);
+	})
+	$("#fadeIn").click(function(){
+		$(".box").fadeIn(3000);
+	})
+	$("#fadeOut").click(function(){
+		$(".box").fadeOut(3000);
+	})
+	$("#toggle").click(function(){
+		$(".box").toggle(3000);
+	})
+	$("#slideToggle").click(function(){
+		$(".box").slideToggle(3000);
+	})
+	$("#fadeToggle").click(function(){
+		$(".box").fadeToggle(3000);
+	})
+	$(".box1").mouseleave(function(){
+		$(".caidan").slideUp(1000);
+	})
+	$(".box1").mouseenter(function(){
+		$(".caidan").slideDown(1000);
+	})
+
+
+	</script>
+</body>
+</html>
