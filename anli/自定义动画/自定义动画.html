@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin:0px;
+		padding: 0px;
+	}
+	.list{
+		list-style: none;
+	}
+
+    .list .box1{
+    	width: 100px;
+    	height: 50px;
+    	list-style: none;
+    	overflow: hidden;
+    	border :1px solid #f00;
+    	float: left;
+    }
+    .list .small1{
+    	width: 100px;
+    	height: 50px;
+    	text-align: center;
+    	line-height: 50px;
+    	background-color: #0ff;
+    }
+    .list .small2{
+    	width: 100px;
+    	height: 50px;
+    	background-color: #00f;
+    	text-align: center;
+    	line-height: 50px;
+    }
+    .list .box2{
+    	width: 100px;
+    	height: 50px;
+        float: left;
+        list-style: none;
+        overflow: hidden;
+        border: 1px solid #f00;
+    }
+    .list .big1{
+    	width: 100px;
+    	height: 50px;
+    	background-color: #00f;
+
+    }
+    .list .big2{
+    	width: 100px;
+    	height: 50px;
+    	background-color: #0ff;
+    }
+
+	</style>
+</head>
+<body>
+        <ul class="list">
+     	    <li class="box1">
+               <div class="smallbox1">
+                  <div class="small1">home</div>
+                  <div class="small2">home</div>
+               </div>
+     	    </li>
+     	    <li class="box1">
+     	    	<div class="smallbox1">
+     	    		<div class="big1">family</div>
+     	    		<div class="big2">family</div>
+     	    	</div>
+     	    </li>
+     	    <li></li>
+        </ul>
+
+
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+	$(".smallbox1").mouseenter(function(){
+		$(this).animate({"margin-top":"-50px"},1000);
+	})
+    $(".smallbox1").mouseleave(function(){
+		$(this).animate({"margin-top":"0px"},1000);
+	})
+	// $(".box2").mouseenter(function(){
+	// 	$(".smallbox2").animate({"margin-top":"-50px"},1000);
+	// })
+	// $(".box2").mouseleave(function(){
+	// 	$(".smallbox2").animate({"margin-top":"0px"},1000);
+	// })
+
+	</script>
+</body>
+</html
