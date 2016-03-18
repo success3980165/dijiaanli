@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="tt">
+	<input type="button" value="添加尾节点" id="btn">
+	<input type="button" value="添加首节点" id="btn1">
+	<ul class="list">
+		<li>电影</li>
+		<li>游戏</li>
+		<li>小说</li>
+	</ul>
+
+
+
+
+
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#btn").click(function(){
+			var value = $("#tt").val()
+			var li = "<li>" + value + "</li>"
+			//<li>加上标签则浏览器把他当做标签来解释，如果不加<>则就输出li和value值。
+			$(".list").append(li);
+		})
+		$("#btn1").click(function(){
+			var value1= $("#tt").val()//val()是获取文本框中的值的意思
+			var li = "<li>" + value1 + "</li>"
+			$(".list").prepend(li);
+		})
+
+
+	</script>
+</body>
+</html>
