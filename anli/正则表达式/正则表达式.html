@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+
+		var reg = /^1$/;
+		$("#txt").blur(function(){
+			var str = $(this).val();
+			var result=reg.test(str);
+			console.log(result);
+		})
+
+	</script>
+</body>
+</html>

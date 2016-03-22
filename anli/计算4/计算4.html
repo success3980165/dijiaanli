@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<input type="text" id="num1">
+	<input type="text" id="sign">
+	<input type="text" id="num2">
+	<input type="text" id="jisuan4">
+	<input type="button" value="计算" id="btn">
+
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		// var sum = 0;
+		// for(var i=0 ;i<=100 i++){
+		// 	sum=sum+i;
+		// }
+		// 	console.log(i);
+
+		$("#btn").click(function(){
+		var num1 = Number($("#num1").val());
+		var num2 = Number($("#num2").val());
+		var sign = $("#sign").val();
+
+    	function count(num1,num2,sign){
+    		var result = 0 ;
+    		switch(sign){
+			case "+":result=num1+num2;break;
+			case "-":result=num1-num2;break;
+			case "*":result=num1*num2;break;
+			case "/":result=num1/num2;break;
+			}
+			return result;
+			
+   	 	}    
+   	 		var result = count(num1,num2,sign);
+   	 		// var result = count(5,6,"*");
+   	 		$("#jisuan4").val(result);
+		})	
+			
+
+
+
+
+
+	</script>
+</body>
+</html>
