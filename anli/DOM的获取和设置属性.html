@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="1" class="num">
+	<input type="button" value="2" class="num">
+	<input type="button" value="3" class="num">
+
+
+	<script type="text/javascript">
+		var aBtn = document.getElementsByClassName("num");
+		var oTxt = document.getElementById("txt");//获取txt并且把过去的值给oTxt.
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].onclick = function(){//点击abtn中的所有按键
+				oTxt.value = this.value;//把按键的value的值给text
+			}
+		}
+
+
+
+
+	</script>
+</body>
+</html>

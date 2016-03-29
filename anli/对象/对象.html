@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var cat = {
+			name:"嘿嘿",
+			age:3,
+			color:"black",
+			sayName:function(){
+				console.log("我的名字叫" + this.name);
+				return this; //返回cat
+			},
+			eat:function(food){
+				console.log("吃" + food);
+				return this; //返回cat
+			}
+		}
+		cat.eat("鱼").sayName();  //调用函数，
+
+
+	</script>
+</body>
+</html>

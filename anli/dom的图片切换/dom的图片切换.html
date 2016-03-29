@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	.box{
+		width: 200px;
+		height: 200px;
+		}
+	.list{
+		list-style: none;
+	}
+	.list li{
+		float: left;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		text-align: center;
+		border: 1px solid #f00;
+	}
+	.active{
+		background-color: #ff0;
+	}
+	
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/1.jpg" alt="" id="pic">
+		</ul>
+	</div>
+	<ul class="list">
+			<li class="num">1</li>
+			<li class="num">2</li>
+			<li class="num">3</li>
+			<li class="num">4</li>
+		</ul>
+
+
+
+
+	<script type="text/javascript">
+	var arrSrc = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg"]
+
+	var aBtn = document.getElementsByClassName("num")//调用num的选择器
+	var oImg = document.getElementById("pic")//调用pic的选择器
+	for(var i = 0; i<aBtn.length;i++){
+		aBtn[i].onclick = function(){
+		var ind = index(this);//调用下面的函数
+		oImg.src = arrSrc[ind];//把数组中的图片赋给原来的图片(就是把原来的图片换成新的图片)
+		addclass(this,"active")//添加active，就是在num的·后面添加active
+		var arr = siblings(this);//调用sibling的函数
+		for(var j = 0;j<arr.length;j++)//调用removeclass的函数。
+			removeclass(arr[j],"active");
+	}
+}
+
+
+	function index (element){//一个index函数，并且写一个element的形参
+		var eleparent = element.parentNode;//定义一个eleparent并且找到父级
+		var eleAll = eleparent.children;//找到父级之后找到父级下的所有兄弟节点
+		for(var i = 0;i<eleAll.length;i++){//遍历所有的兄弟节点
+			if(eleAll[i]==element){//如果i节点是自身
+				return i;//返回i
+			}
+
+		}
+	}
+	function addclass(element,str){
+		element.className = element.className + " "+ str;//元素的名字加空格加字符串(给一个元素添加一个元素，所以需要2个元素，俩个形参)
+	}
+	function siblings(element){
+		var arrery = [];
+		var eleparent = element.parentNode;
+		var eleAll = eleparent.children;
+		for(var i = 0;i<eleAll.length;i++){
+			if(eleAll[i]!==element){
+				arrery.push(eleAll[i]);//把arrery数组的元素追加到原来数组的后面
+		}
+	}
+	return arrery;
+}
+	function removeclass(element,str){//第一个找到一个元素，第二个是找到元素的一个属性
+		var arr = element.className.split(" ");
+		var newArr = [];
+		for(var i = 0;i<arr.length;i++){
+			if(arr[i]!=="active"){
+				newArr.push(arr[i]);
+			}
+		}
+		var newClassName = newArr.join(" ");//把数组变成字符串。
+		element.className = newClassName;
+	}
+
+	</script>
+</body>
+</html>

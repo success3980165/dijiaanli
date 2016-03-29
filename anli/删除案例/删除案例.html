@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>电影 <span class="del">删除</span></li>
+		<li>游戏 <span class="del">删除</span></li>
+		<li>网页 <span class="del">删除</span></li>
+		<li>动漫 <span class="del">删除</span></li>
+	</ul>
+
+
+
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".del").click(function(){
+			var result = confirm("是否删除");//弹出对话框，
+			if(result){
+				var element = $(this).parent();//如果result是真的，则把他们的父级赋值给element，并且删除他们的父级;
+				element.remove();
+			}
+
+
+		})
+
+
+
+	</script>
+</body>
+</html>

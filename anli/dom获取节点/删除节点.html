@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加">
+	<ul id="list">
+		<li>香蕉 <span class="del"> 删除</span></li>
+		<li>苹果 <span class="del"> 删除</span></li>
+		<li>鸭梨 <span class="del"> 删除</span></li>
+	</ul>
+
+
+
+
+	<script type="text/javascript">
+		var oTxt = document.getElementById("txt");
+		var oBtn = document.getElementById("btn");
+		var oUl = document.getElementById("list");
+
+
+	var aDel = document.getElementsByClassName("del");
+	for(var i=0; i<aDel.length;i++){
+		aDel[i].onclick = function(){
+			oUl.removeChild(this.parentNode)//不太懂什么意思?
+		}
+		
+	}
+		function remove(node){
+			node.parentNode.removeChild()//不懂！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+		}
+		function getIndex(ele){
+			return index;
+		}
+
+
+
+
+	</script>
+</body>
+</html>

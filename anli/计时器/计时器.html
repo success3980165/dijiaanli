@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="暂停" id="stop">
+	<input type="button" value="开始" id="start">
+
+
+
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var n=0;
+		function fun(){
+			console.log(n);
+			n++;
+		}
+			var t= setInterval(fun,1000)//调用上面的函数，每隔1秒调用一次
+			$("#stop").click(function(){
+				clearInterval(t);//取消由setInterval设置的timeout
+			})
+			$("#start").click(function(){
+				t=setInterval(fun,1000);
+			})
+
+	</script>
+</body>
+</html>

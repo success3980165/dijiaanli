@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	.bigbox{
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+	}
+	.list{
+		list-style: none;
+		width: 800px;
+		height: 200px;
+		
+	}
+	.list li{
+		float: left;
+		width: 200px;
+		height: 200px;
+		
+
+	}
+	.nav{
+		width: 800px;
+		height: 200px;
+		list-style: none;
+
+	}
+	.nav li{
+		list-style: none;
+		width: 50px;
+		height: 50px;
+		float: left;
+		border: 1px solid #f00;
+		line-height: 50px;
+		text-align: center;
+		cursor: pointer;
+	}
+
+
+
+
+	</style>
+</head>
+<body>
+	
+
+<div class="bigbox">
+	<ul class="list">
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+		<li><img src="images/4.jpg" alt=""></li>
+	</ul>
+</div>
+<ul class="nav">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+
+
+
+	<script type="text/javascript"src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+	var n=1;//因为n=1时调用这个函数时6秒执行，如果n=0就要12秒执行
+	function ani(){
+		n = n == 4 ? 0 : n//三目运算符  或 条件运算符
+		$(".list").animate({"margin-left":-200 * n},2000)//图片的切换需要2秒的时间
+		n++;
+	}
+	var t =setInterval(ani,2000);//图片2秒开始移动一次，1秒调用2次函数。
+	$(".nav li").click(function(){
+		var index = $(this).index();
+		$(".list").animate({"margin-left":-200 * index},2000)
+		//选取list的选择器，点取按钮让图片向右移动一张，点击时让图片2秒向右移动一张。
+		n=index+1;
+		//图片停止时，如果再次让图片开始移动则在当下图片还是移动，而不是回到开头重新开始移动。
+	})
+	$(".nav li").mouseenter(function(){
+		clearInterval(t);//当鼠标移入按钮时，清除时间，让图片停止在当前图片。
+	}).mouseleave(function(){
+		t=setInterval(ani,2000)//当鼠标移出时图片再次开始移动，并且2秒移动一次
+	})
+
+
+
+
+
+	</script>
+</body>
+</html>

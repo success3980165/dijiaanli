@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+	<input type="text" id="txt">
+	<ul id="list">
+		<li>游戏</li>
+		<li>动漫</li>
+		<li>网页</li>
+	</ul>
+
+
+
+	<script type="text/javascript">
+		var oBtn = document.getElementById("btn");
+		var oTxt = document.getElementById("txt");
+		var oUl = document.getElementById("list");
+
+		oBtn.onclick = function(){
+			var val = oTxt.value;//找到文本框中value的属性值
+			var oLi = document.createElement("li");//创建一个li标签节点
+			var oText = document.createTextNode(val);//创建一个文本节点
+			oLi.appendChild(oText);//oLi添加一个文本节点
+			oUl.appendChild(oLi);//oUl添加一个元素节点。吧oLi给oUl
+}
+
+
+	</script>
+</body>
+</html>

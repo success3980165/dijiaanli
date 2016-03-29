@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<div>
+	<input type="button"value="1" class="num">
+	<input type="button"value="2" class="num">
+	<input type="button"value="3" class="num">
+	<input type="button"value="4" class="num">
+	<input type="button"value="5" class="num">
+	<input type="button"value="6" class="num">
+	<input type="button"value="7" class="num">
+	<input type="button"value="8" class="num">
+	<input type="button"value="9" class="num">
+	<input type="button"value="0" class="num">
+	</div>
+	<div>
+	<input type="button"value="+" class="sign">
+	<input type="button"value="-" class="sign">
+	<input type="button"value="*" class="sign">
+	<input type="button"value="/" class="sign">
+	</div>
+	<input type="button"value="c" class="clear">
+	<input type="button"value="=" class="result">
+
+
+
+
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+	var num1= "";
+	var num2= "";
+	var sign= "";
+	var result= 0;//把所有的对象都初始化。
+	$(".num").click(function(){
+		var val = $(this).val();
+		if(sign == ""){
+			num1 += val;//如果字符串为空，则num1+num1，这是一个字符串连接的作用。
+		$("#txt").val(num1);//输出字符串
+		}else{
+			num2 += val;//输出字符串num2+num2，就是num2的字符串连接
+			$("#txt").val(num2);
+		
+		}
+	})
+	$(".sign").click(function(){
+		sign = $(this).val()
+	})
+	$(".result").click(function(){
+		var number1 = Number(num1);//把num1和num2变成数字化
+		var number2 = Number(num2);
+		switch(sign){
+			case "+":result=number1 + number2;break;//进行switch的运算！
+			case "-":result=number1 - number2;break;
+			case "*":result=number1 * number2;break;
+			case "/":result=number1 / number2;break;
+		}
+		$("#txt").val(result);
+	})
+	$(".clear").click(function(){//把所有的字符串数字都清除
+		num1 = "";
+		num2 = "";
+		sign = "";
+		result = 0;
+		$("#txt").val("");
+	})
+
+
+	</script>
+
+
+
+</body>
+</html>

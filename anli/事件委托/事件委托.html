@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加">
+	<ul id="list">
+		<li>游戏<span class="del">删除</span></li>
+		<li>动漫<span class="del">删除</span></li>
+		<li>电影<span class="del">删除</span></li>
+	</ul>
+	<script type="text/javascript">
+	var oTxt = document.getElementById("txt")
+	var oBtn = document.getElementById("btn")
+	var oList = document.getElementById("list")
+
+	oList.onclick = function(event){
+		var elem = event.target;//点击最近的元素节点
+		if(elem.className == "del"){
+		this.removeChild(elem.parentNode);//这个ul删除li
+	}
+}
+	oBtn.onclick = function(){
+		var val = oTxt.value;
+		var oSpan = document.createElement("span");//新创建一个元素节点，并且把span的字符串附给oSpan
+		var oText1 = document.createTextNode("删除");//新创建一个文本节点,并且把删除f附给oText1
+		oSpan.appendChild(oText1);
+		var oLi = document.createElement("li");
+		var oText = document.createTextNode(val);
+		oLi.appendChild(oText);//在oLi中添加孩子节点oText;
+		oLi.appendChild(oSpan);
+		oList.appendChild(oLi);
+		oSpan.className="del";//给span添加一个del的属性，这样就可以删除添加后的元素了
+	}
+
+
+
+	</script>
+</body>
+</html>

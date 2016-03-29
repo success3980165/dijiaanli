@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加">
+	<ul id="list">
+		<li>香蕉<span class="del"> 删除</span></li>
+		<li>苹果<span class="del"> 删除</span></li>
+		<li>鸭梨<span class="del"> 删除</span></li>
+	</ul>
+
+	<script type="text/javascript">
+		var oTxt = document.getElementById("txt")//定义一个变量名，otxt中的o是对象的意思
+		var oBtn = document.getElementById("btn")//id的选择器用document.getElementById
+		var oUl = document.getElementById("list")
+
+		oBtn.onclick = function(){
+			var val = oTxt.value;
+			var oLi = document.createElement("li")
+			var oText = document.createTextNode(val);
+			oLi.appendChild(oText);
+			oUl.appendChild(oLi);
+		}
+		var aDel = document.getElementsByClassName("Del");
+		//class的选择器则用document.getElementsByClassName,aDel中的a是数组的意思
+		for(var i =0;i<aDel.length;i++){
+			aDel[i].onclick = function(){
+			//把函数赋值给点击数组中的第i个元素
+			oUl.removeChild(this.parentNode);//找到自己的父级删除自己的孩子(就是删除自己)
+			}
+		}
+		function remove(node){
+			node.parentNode.removeChild()//这个函数是找到父级的节点删除自己的孩子节点
+		}
+
+
+	</script>
+</body>
+</html>

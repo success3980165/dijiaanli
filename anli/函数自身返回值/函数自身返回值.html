@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		//写一个函数 传入一个参数的时候，返回这个数的平方，传入两个参数，返回两个参数的乘积
+
+		// function count(){
+		// 	var arg = arguments.length
+		// 	if (arg ==1){
+		// 		return arguments[0]*arguments[0];   
+		// 	}else if(arg==2){
+		// 		return arguments[0]*arguments[1];
+		// 	}
+		// }
+		// 	var result = count(6,5);
+		// 	console.log(result);
+
+
+
+
+		function count(x){
+			if(x==1){
+				return x;
+			}
+			else{
+				return  x * count(x-1)//6的阶乘算法
+			}
+		}
+		var result = count(6);
+		console.log(result);
+		
+	</script>
+</body>
+</html>
